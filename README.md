@@ -1,6 +1,6 @@
 # Automação de Testes com Cypress
 
-Este projeto contém testes automatizados usando Cypress com Page Object Model (POM) para realizar buscas no Yahoo, incluindo geração de relatórios com Allure.
+Este projeto contém testes automatizados usando Cypress com duas abordagens diferentes (Page Object Model e Direta) para realizar buscas no Yahoo, incluindo geração de relatórios com Allure, screenshots automáticos e logs detalhados.
 
 ## 🔧 Pré-requisitos
 
@@ -12,8 +12,8 @@ Este projeto contém testes automatizados usando Cypress com Page Object Model (
 
 1. Clone o repositório:
 ```bash
-git clone [URL_DO_REPOSITORIO]
-cd automacao-renato-cypress
+git clone https://github.com/RoniQA/automa-o-cypress-simples.git
+cd automacao-cypress-simples
 ```
 
 2. Instale as dependências:
@@ -44,10 +44,16 @@ automacao-renato-cypress/
 
 ## 🎯 Funcionalidades Testadas
 
-- **Busca no Yahoo**
-  - Realiza uma pesquisa por "Pacto Soluções"
-  - Valida os resultados da busca
-  - Captura screenshots da página de resultados
+- **Busca no Yahoo (Duas Versões)**
+  1. **Com Page Object Model (yahooTests.cy.js)**
+     - Implementa o padrão POM para melhor organização
+     - Captura screenshots após validação dos resultados
+     - Inclui logs detalhados das ações
+  
+  2. **Versão Direta (yahooTestsDirect.cy.js)**
+     - Implementação mais simples e direta
+     - Também inclui captura de screenshots
+     - Logs detalhados de cada ação
 
 ## ⚡ Executando os Testes
 
@@ -106,9 +112,26 @@ O projeto utiliza o padrão Page Object Model (POM) para melhor organização e 
 
 ## 📷 Screenshots
 
-Os screenshots são capturados automaticamente durante a execução dos testes e podem ser encontrados em:
+Os screenshots são capturados automaticamente durante a execução dos testes:
+- **yahooTests.cy.js**: Salva como 'yahoo-search-results'
+- **yahooTestsDirect.cy.js**: Salva como 'yahoo-direct-search-results'
+
+Localização dos screenshots:
 - `cypress/screenshots/` (após execução dos testes)
 - Também são incluídos no relatório Allure
+
+## 🔍 Implementações Específicas
+
+### Page Object Model (YahooPage.js)
+- Implementa métodos reutilizáveis para navegação
+- Inclui validações robustas
+- Integração com Allure para relatórios detalhados
+- Logs detalhados de cada ação
+
+### Testes Diretos (yahooTestsDirect.cy.js)
+- Implementação mais simples e direta
+- Mantém as mesmas validações de qualidade
+- Inclui logs detalhados para melhor visibilidade na interface do Cypress
 
 ## 🤝 Contribuindo
 
